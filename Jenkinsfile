@@ -23,11 +23,11 @@ pipeline {
                 }
             }
 		
-        stage('kill tmux session') {
+        stage('kill session') {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                 script {             
-                    sh 'sudo tmux kill-session -t $PORT'
+                    sh 'sudo killall -u minecraft'
                     } }
                 }
             }
