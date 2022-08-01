@@ -83,7 +83,7 @@ pipeline {
             stage('create tmux session and start bedrock') {
             steps {
                 script {
-                    sh 'JENKINS_NODE_COOKIE=dontkillme sudo screen -t $PORT -d -m "./home/minecraft/$PORT/start.sh"'
+                    sh "tmux new -s $PORT -d './start.sh'"
                     }
                 }
             }
