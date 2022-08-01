@@ -83,7 +83,7 @@ pipeline {
             stage('create tmux session and start bedrock') {
             steps {
                 script {
-                    sh "tmux new -s $PORT -d './start.sh'"
+                    sh "su - minecraft; tmux new -s $PORT -d './home/minecraft/$PORT/start.sh'"
                     }
                 }
             }
