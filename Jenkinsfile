@@ -9,7 +9,7 @@ pipeline {
         }
             stage('pwd') {
             steps {
-                sh 'docker ls'
+                sh 'pwd'
             }
         }
     }
