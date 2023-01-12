@@ -1,8 +1,7 @@
 pipeline {
     agent {
         kubernetes {
-            label "docker"
-            cloud "kubernetes"
+            inheritFrom 'docker'
         }
     }
     stages {
