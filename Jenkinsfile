@@ -9,7 +9,7 @@ pipeline {
         }
             stage('pwd') {
             steps {
-                sh 'pwd'
+                sh 'apt-get install nano'
             }
         }
     }
