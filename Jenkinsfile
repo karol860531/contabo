@@ -3,14 +3,15 @@ pipeline {
 
     stages {
         stage('Verify_branch_name') {
-            steps {
-                echo "$GIT_BRANCH"
-            }
+
+stage('Build-Docker-Image') {
+      steps {
+        container('docker') {
+          sh 'docker build -t ss69261/testing-image:latest .'
         }
-            stage('pwd') {
-            steps {
-                sh 'apt-get install nano'
-            }
-        }
+      }
     }
-}
+    }
+}}
+
+
